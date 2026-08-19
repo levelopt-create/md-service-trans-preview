@@ -446,6 +446,7 @@ section { padding: var(--space-7) 0; }
 .stars svg { width: 26px; height: 26px; color: var(--color-border); }
 .reviews-panel h3 { margin-bottom: 10px; }
 .reviews-panel p { margin-bottom: var(--space-3); }
+.gbp-cta { margin-bottom: var(--space-2); }
 .gbp-badge {
   display: inline-flex;
   align-items: center;
