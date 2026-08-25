@@ -91,11 +91,24 @@
         </div>
       </div>
       <div class="hero-photo-card">
-        <!-- Illustrative photos — replace with real MD Service Trans photos once supplied -->
-        <div class="hero-grid-item"><img src="assets/photos/hero-grid-1-truck-boxes.jpg" alt="Vollgeladener Umzugswagen mit Kartons (Illustrationsfoto)" width="450" height="450"></div>
-        <div class="hero-grid-item"><img src="assets/photos/hero-grid-2-carry-mattress.jpg" alt="Transport eines Möbelstücks beim Umzug (Illustrationsfoto)" width="450" height="450"></div>
-        <div class="hero-grid-item"><img src="assets/photos/hero-grid-3-dolly-van.jpg" alt="Möbeltransport mit Sackkarre am Lieferwagen (Illustrationsfoto)" width="450" height="450"></div>
-        <div class="hero-grid-item"><img src="assets/photos/hero-grid-4-truck-road.jpg" alt="Umzugswagen unterwegs (Illustrationsfoto)" width="450" height="450"></div>
+        <!-- TODO: swap for the matched AI-generated "chaos -> packed" pair once supplied via Drive -->
+        <div class="ba-slider" id="hero-ba-slider">
+          <div class="ba-slider-layer ba-after">
+            <img src="assets/photos/service-entruempelung.jpg" alt="Nachher: aufgeräumter, ordentlicher Raum" width="900" height="765">
+          </div>
+          <div class="ba-slider-layer ba-before">
+            <img src="assets/photos/entruempelung-vorher.jpg" alt="Vorher: Umzugschaos mit Kisten und Unordnung" width="900" height="765">
+          </div>
+          <span class="ba-slider-tag ba-tag-before">Vorher</span>
+          <span class="ba-slider-tag ba-tag-after">Nachher</span>
+          <div class="ba-slider-handle" id="hero-ba-handle" role="slider" tabindex="0"
+               aria-label="Vorher/Nachher-Vergleich verschieben" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <span class="ba-slider-handle-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4"/></svg>
+            </span>
+          </div>
+          <span class="hero-slogan">Umzug ohne Stress</span>
+        </div>
         <span class="hero-photo-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M7 20h10M9 16v4M15 16v4"/></svg>Nürnberg · Festpreis-Umzüge</span>
       </div>
     </div>
@@ -504,6 +517,61 @@
       toggle.setAttribute('aria-expanded', 'false');
     }
   });
+
+  // Before/After hero slider — pointer, touch, keyboard accessible
+  (function () {
+    var slider = document.getElementById('hero-ba-slider');
+    if (!slider) return;
+    var handle = document.getElementById('hero-ba-handle');
+    var beforeLayer = slider.querySelector('.ba-before');
+    var dragging = false;
+
+    function setPosition(percent) {
+      percent = Math.max(0, Math.min(100, percent));
+      beforeLayer.style.clipPath = 'inset(0 ' + (100 - percent) + '% 0 0)';
+      handle.style.left = percent + '%';
+      handle.setAttribute('aria-valuenow', Math.round(percent));
+    }
+
+    function percentFromClientX(clientX) {
+      var rect = slider.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    function onPointerDown(e) {
+      dragging = true;
+      slider.classList.add('ba-dragging');
+      handle.focus();
+      onPointerMove(e);
+      e.preventDefault();
+    }
+    function onPointerMove(e) {
+      if (!dragging) return;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setPosition(percentFromClientX(clientX));
+    }
+    function onPointerUp() {
+      dragging = false;
+      slider.classList.remove('ba-dragging');
+    }
+
+    slider.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', onPointerUp);
+    slider.addEventListener('touchstart', onPointerDown, { passive: false });
+    window.addEventListener('touchmove', onPointerMove, { passive: false });
+    window.addEventListener('touchend', onPointerUp);
+
+    handle.addEventListener('keydown', function (e) {
+      var current = parseFloat(handle.getAttribute('aria-valuenow')) || 50;
+      if (e.key === 'ArrowLeft') { setPosition(current - 5); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { setPosition(current + 5); e.preventDefault(); }
+      else if (e.key === 'Home') { setPosition(0); e.preventDefault(); }
+      else if (e.key === 'End') { setPosition(100); e.preventDefault(); }
+    });
+
+    setPosition(50);
+  })();
 
   // Dynamic per-service request form fields
   const serviceSelect = document.getElementById('service');
