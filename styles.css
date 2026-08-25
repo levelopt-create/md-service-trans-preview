@@ -633,6 +633,7 @@ section { padding: var(--space-7) 0; scroll-margin-top: 88px; }
   margin: 0 0 var(--space-2);
 }
 .photo-hint svg { flex-shrink: 0; margin-top: 2px; color: var(--color-orange-dark); }
+.photo-hint strong { color: var(--color-navy); }
 .photo-hint a { color: var(--color-navy); font-weight: 600; text-decoration: underline; }
 
 .hp-field {
