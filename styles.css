@@ -169,12 +169,10 @@ p { color: var(--color-text-muted); }
   overflow: hidden;
 }
 .hero-inner {
-  padding-top: var(--space-6);
-  padding-bottom: var(--space-6);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: var(--space-5);
-  align-items: center;
+  align-items: start;
 }
 .hero-copy { display: grid; gap: var(--space-3); }
 .eyebrow {
