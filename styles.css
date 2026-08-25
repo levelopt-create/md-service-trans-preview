@@ -125,7 +125,8 @@ p { color: var(--color-text-muted); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
   gap: var(--space-3);
 }
 .brand { display: flex; align-items: center; gap: 10px; }
@@ -168,7 +169,8 @@ p { color: var(--color-text-muted); }
   overflow: hidden;
 }
 .hero-inner {
-  padding: var(--space-6) 0;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: var(--space-5);
@@ -216,7 +218,8 @@ p { color: var(--color-text-muted); }
 .hero-photo-badge {
   position: absolute;
   left: var(--space-2);
-  bottom: var(--space-2);
+  top: var(--space-2);
+  z-index: 4;
   background: rgba(8,39,68,0.85);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.18);
@@ -228,6 +231,7 @@ p { color: var(--color-text-muted); }
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  pointer-events: none;
 }
 .hero-photo-badge svg { width: 14px; height: 14px; color: var(--color-orange); }
 
@@ -240,7 +244,7 @@ p { color: var(--color-text-muted); }
 .ba-slider {
   position: absolute;
   inset: 0;
-  cursor: ew-resize;
+  cursor: pointer;
   touch-action: pan-y;
   user-select: none;
 }
@@ -280,6 +284,8 @@ p { color: var(--color-text-muted); }
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: none;
+  cursor: ew-resize;
 }
 .ba-slider-handle::before {
   content: "";
@@ -524,15 +530,15 @@ section { padding: var(--space-7) 0; }
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: var(--space-3) var(--space-4);
   text-align: center;
-  max-width: 720px;
+  max-width: 560px;
   margin: 0 auto;
 }
-.stars { display: flex; justify-content: center; gap: 4px; margin-bottom: var(--space-2); }
-.stars svg { width: 26px; height: 26px; color: var(--color-border); }
-.reviews-panel h3 { margin-bottom: 10px; }
-.reviews-panel p { margin-bottom: var(--space-3); }
+.stars { display: flex; justify-content: center; gap: 4px; margin-bottom: var(--space-1); }
+.stars svg { width: 20px; height: 20px; color: var(--color-border); }
+.reviews-panel h3 { margin-bottom: 8px; font-size: 1.15rem; }
+.reviews-panel p { margin-bottom: var(--space-2); font-size: 0.92rem; }
 .gbp-cta { margin-bottom: var(--space-2); }
 .gbp-badge {
   display: inline-flex;
