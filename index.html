@@ -245,8 +245,58 @@
           <span class="area-chip">Neumarkt i.d.OPf.</span>
         </div>
       </div>
-      <div class="area-map" role="img" aria-label="Schematische Karte des Einsatzgebiets rund um Nürnberg">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7 2 3 6 3 11c0 6.5 9 11 9 11s9-4.5 9-11c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg>
+      <div class="area-map" role="img" aria-label="Stilisierte Illustration des Einsatzgebiets in Franken: Nürnberg als Standort, mit Verbindungen nach Fürth, Erlangen, Schwabach, Herzogenaurach, Roth, Ansbach und Neumarkt in der Oberpfalz">
+        <svg class="area-illustration" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Region blob -->
+          <path d="M200 95 C260 90 300 120 310 160 C330 200 320 250 290 280 C270 310 230 330 190 325 C140 330 95 305 75 265 C55 230 60 180 85 150 C100 120 140 100 200 95 Z"
+                fill="#F7F9FC" stroke="#D8E3FA" stroke-width="2"/>
+
+          <!-- Watermark region label -->
+          <text x="26" y="60" font-family="'Poppins', sans-serif" font-weight="800" font-size="34" letter-spacing="4" fill="#0B3559" opacity="0.06">FRANKEN</text>
+
+          <!-- Routes from Nürnberg -->
+          <g stroke="#F0801E" stroke-width="1.6" stroke-dasharray="4 5" opacity="0.55">
+            <line x1="205" y1="200" x2="172" y2="191"/>
+            <line x1="205" y1="200" x2="187" y2="131"/>
+            <line x1="205" y1="200" x2="200" y2="249"/>
+            <line x1="205" y1="200" x2="131" y2="156"/>
+            <line x1="205" y1="200" x2="181" y2="284"/>
+            <line x1="205" y1="200" x2="101" y2="246"/>
+            <line x1="205" y1="200" x2="269" y2="230"/>
+          </g>
+
+          <!-- Secondary cities -->
+          <g font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#14243A">
+            <circle cx="172" cy="191" r="4.5" fill="#0B3559"/>
+            <text x="180" y="188">Fürth</text>
+
+            <circle cx="187" cy="131" r="4.5" fill="#0B3559"/>
+            <text x="195" y="128">Erlangen</text>
+
+            <circle cx="200" cy="249" r="4.5" fill="#0B3559"/>
+            <text x="208" y="253">Schwabach</text>
+
+            <circle cx="131" cy="156" r="4.5" fill="#0B3559"/>
+            <text x="60" y="150">Herzogenaurach</text>
+
+            <circle cx="181" cy="284" r="4.5" fill="#0B3559"/>
+            <text x="150" y="304">Roth</text>
+
+            <circle cx="101" cy="246" r="4.5" fill="#0B3559"/>
+            <text x="55" y="240">Ansbach</text>
+
+            <circle cx="269" cy="230" r="4.5" fill="#0B3559"/>
+            <text x="277" y="227">Neumarkt i.d.OPf.</text>
+          </g>
+
+          <!-- Nürnberg (hub) -->
+          <circle cx="205" cy="200" r="14" fill="#F0801E" opacity="0.18"/>
+          <circle cx="205" cy="200" r="8" fill="#F0801E"/>
+          <circle cx="205" cy="200" r="8" fill="none" stroke="#fff" stroke-width="2"/>
+          <!-- simple castle glyph above the hub -->
+          <path d="M195 168h4v-6h4v6h4v-6h4v6h4v10h-20z" fill="#0B3559"/>
+          <text x="205" y="220" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="700" font-size="13" fill="#0B3559">Nürnberg</text>
+        </svg>
         <div class="area-map-label">Anderer Ort in der Nähe? Einfach anfragen — wir prüfen es gerne.</div>
       </div>
     </div>
