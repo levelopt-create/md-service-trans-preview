@@ -620,6 +620,21 @@ section { padding: var(--space-7) 0; scroll-margin-top: 88px; }
 .form-hint { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px; }
 .form-note { font-size: 0.82rem; color: var(--color-text-muted); margin-top: var(--space-2); }
 
+.photo-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+.photo-hint svg { flex-shrink: 0; margin-top: 2px; color: var(--color-orange-dark); }
+.photo-hint a { color: var(--color-navy); font-weight: 600; text-decoration: underline; }
+
 .hp-field {
   position: absolute;
   left: -5000px;
