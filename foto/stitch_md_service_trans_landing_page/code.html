@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MD Service Trans - Umzüge &amp; Transporte in Franken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Open+Sans:wght@400&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-dim": "#cfdaf1",
+                        "outline": "#73777f",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "surface-container-high": "#dee8ff",
+                        "on-secondary-container": "#632f00",
+                        "on-secondary-fixed-variant": "#713700",
+                        "on-primary-fixed": "#001d36",
+                        "secondary": "#954a00",
+                        "primary-fixed-dim": "#a7c9f5",
+                        "tertiary-container": "#303436",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-tertiary-container": "#999c9f",
+                        "surface-container-low": "#f0f3ff",
+                        "on-primary-container": "#7c9ec8",
+                        "tertiary": "#1b1f21",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7eeff",
+                        "primary-fixed": "#d1e4ff",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "secondary-fixed-dim": "#ffb785",
+                        "surface-container-highest": "#d8e3fa",
+                        "on-secondary-fixed": "#301400",
+                        "surface-bright": "#f9f9ff",
+                        "outline-variant": "#c3c6cf",
+                        "tertiary-fixed": "#e0e3e6",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#a7c9f5",
+                        "on-surface": "#111c2c",
+                        "background": "#f9f9ff",
+                        "secondary-fixed": "#ffdcc6",
+                        "inverse-surface": "#263142",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#43474e",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#3e6187",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d8e3fa",
+                        "primary": "#001f3a",
+                        "on-primary-fixed-variant": "#25496e",
+                        "secondary-container": "#fd8a29",
+                        "on-background": "#111c2c",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#0b3559"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "price-display": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Open Sans"],
+                        "body-md": ["Open Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "price-display": ["20px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    },
+                    boxShadow: {
+                        'soft': '0px 4px 20px rgba(11, 53, 89, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .image-compare {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            user-select: none;
+        }
+        .image-compare img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image-compare-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .image-compare-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #fd8a29; /* secondary-container */
+            cursor: ew-resize;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .image-compare-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 32px;
+            height: 32px;
+            background: #fd8a29;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 border-b border-primary/10 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                MD Service Trans
+            </div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#leistungen">Leistungen</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#warum-wir">Warum wir</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#ablauf">Ablauf</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#einsatzgebiet">Einsatzgebiet</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#bewertungen">Bewertungen</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#kontakt">Kontakt</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="font-label-mono text-label-mono hidden lg:inline-block">0911 1234567</span>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-body-md font-semibold hover:bg-primary/90 transition-colors" href="#kontakt">Angebot anfordern</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+<div>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6">
+                Ihr zuverlässiger Partner für Umzüge &amp; Transporte in Franken
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                Transparent. Festpreis. Schnell. Wir kümmern uns um Ihren sicheren Umzug, damit Sie entspannt ankommen.
+            </p>
+<div class="flex flex-wrap gap-4 mb-12">
+<a class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-body-md font-semibold hover:opacity-90 transition-opacity" href="tel:09111234567">Jetzt anrufen</a>
+<a class="border-2 border-primary text-primary px-8 py-3 rounded-full font-body-md font-semibold hover:bg-primary/5 transition-colors" href="#kontakt">Kostenloses Angebot</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="flex flex-col items-center text-center p-3 bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="payments">payments</span>
+<span class="font-label-mono text-[12px] text-primary">Festpreis</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="shield">shield</span>
+<span class="font-label-mono text-[12px] text-primary">Versichert</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="bolt">bolt</span>
+<span class="font-label-mono text-[12px] text-primary">Schnelle Antwort</span>
+</div>
+<div class="flex flex-col items-center text-center p-3 bg-primary/5 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="location_on">location_on</span>
+<span class="font-label-mono text-[12px] text-primary">Lokal in Franken</span>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[500px] image-compare shadow-soft" id="hero-compare">
+<img alt="Before" class="absolute inset-0" data-alt="A chaotic, messy living room before a move, with cardboard boxes scattered haphazardly, unorganized furniture, and a general sense of clutter and disorder. The lighting is slightly dim, emphasizing the need for professional help. Documentary style photography, highly detailed, realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHNcFbsVgRDdVFp4-OLyXxmOtn4cHNQoCvPbjGKdke2Y7E9RvhlEvb3ELvl9L77RwmD7bnZd9FL5ymw6m6fYvJch5BPFx8NkIfbbL_q0nQSL_dYfg3Uo-g7KSPGpNIaJ_UlzRDu_BJ2NrDcybyZyE8GfUAs4BKy_2ouOY3wAihPnKD9nqW-3dhYI84dnNvl9HUZb7tbHy_NPDyHaz8l_XYtvrQ9gISkjty08SM35I0dV5w_eZtd8_z"/>
+<div class="image-compare-overlay">
+<img alt="After" class="absolute inset-0 w-[200%] max-w-none" data-alt="The identical living room, now perfectly organized for a move. Clean, professional moving boxes are neatly stacked. Furniture is securely wrapped in protective blankets. The room feels spacious, orderly, and calm. Bright, clean light-mode aesthetic photography, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMf-jJVVpUBz1Gokva2Zlq-WqxIRVGDlCD-Nf7KPrG8JeitXwCUpT72xoQlw1cnr52Fl22OT5mMxzAsrnXc01np0Ofe9TezUYgMX-1tA53xvf40ZiG61S3r1r5X9SYis-YVPt0HshvwwEwcoSoLkhfwidps2sJDYfU4z-FsrWQA9Jkhulk-80IL1HUd6h013MCbsI2gVNDxrVUCNH2_seIbXQlIHS20P7JeH6_51l5hjXFLklPMpFc"/>
+</div>
+<div class="image-compare-handle"></div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-section-gap bg-surface-container-low" id="leistungen">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Unsere Leistungen</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Professionell, sicher und auf Ihre Bedürfnisse zugeschnitten.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-soft overflow-hidden flex flex-col">
+<img class="h-48 w-full object-cover" data-alt="Professional movers in clean navy blue uniforms carefully carrying a large couch out of an apartment. Sunny daylight, documentary style photography, conveying trust and physical strength. The scene is bright and professional, fitting a corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAup7nY7v4yzjRw9DkjGiN_O9hBFENu5nMbrZk7MB3k_4wnz2GrjIWHlxgj1E9a_ow7GC8Lu4TNYcGq_bbgv-JbO8BPtZ6BZw4M1H_MzSb5ikq891LCdRNdk_sBhCdVZAbo8nlvdWqHgrN6bPKt0Q1lLRsH6uauNZXz6Jy5rfQzLLp8riDQl4lSsv5Qk7VtA2vB3C96j0w0hwAQsBfmxKunnM0-CoPJwALxphjsqY9kvIrErvcEDWTJ"/>
+<div class="p-4 flex-1">
+<span class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Full-Service Umzüge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Wir übernehmen den kompletten Umzug von A bis Z für Privat &amp; Gewerbe.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-soft overflow-hidden flex flex-col">
+<img class="h-48 w-full object-cover" data-alt="A clean, modern moving truck parked in front of a residential building. A mover is securing a large wardrobe inside the truck. Bright, clear daylight, professional documentary photography style. The colors are predominantly white, blue, and neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuU1kT4RfFmW1h5edWUGhvXEcm1sG6qW0rzkw77UsbAxZeTT_cOTzBWR-RzlHsQYDBIDVKdEOiWz_q8eBnCZEvzjjJUFkVvYsqqj5LX37pKPDm27MMESWeEPLODS9yGUpJ76KlDMGfckioiv-YXnPlxEVJBhdUS_i02PkWdDnvl7LiMeQbsfm_V3uKcvhzpv_R7z5GAoU6XFr-vkheLpXhg6xroHvT3x4bntw106-P-Rvz_yP90Fzv"/>
+<div class="p-4 flex-1">
+<span class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="inventory_2">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Möbeltransporte</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Sicherer Transport einzelner Möbelstücke oder großer Gegenstände.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-soft overflow-hidden flex flex-col">
+<img class="h-48 w-full object-cover" data-alt="Close up of a professional worker assembling a wooden cabinet with a cordless drill. Focused, detailed shot showing expertise and care. Bright, clear lighting, modern corporate aesthetic. The worker wears a neat blue uniform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZuT684LXQjloziPuBda_kFD0dqzx4w31uWJI5Eo0RUWafpo5q8R0SbqjC8N4O7PBKHqG7DoUTihxohputsGQEMcVfSyRvHTNMPfJIXux_Oa6eP3QtoWXT8WiSdsJWFLCqbSG_bMPDlerS3Coj2GfuF59k6DEy0kAbmmHnQnrFR8djhiDGhG_U9qkssuZVm41SEiGvwikIfYlxbNPnu3sn26NBPWH_qoAwUvY2x5AlfZvcJffVPYhO"/>
+<div class="p-4 flex-1">
+<span class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="handyman">handyman</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Montage &amp; Demontage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fachgerechter Ab- und Aufbau Ihrer Möbelküchen und Schränke.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-soft overflow-hidden flex flex-col">
+<img class="h-48 w-full object-cover" data-alt="An empty, clean room after a successful clearing service. A single worker is sweeping the floor. The space is bright and tidy, conveying a sense of relief and fresh starts. Documentary style, clean light-mode visual aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhI80PGlfETmgoH8cLzXeWnTWVCPN0GyoYr1p72NxWRlDgov9MweVF4f_kfAoE7zsDD8Plb_4lNfqFSEpMBKRaCqNP9cmpuvCZZ9hxKSohs9O7MUOaM09rxzIPKmbsCPCESEdo5MzDYJXiDDgvYnYmRL8RCGgUKkkG6YQEN-UwiS1bU57U32dFkcTXQHT-aTeb0KU9NLvme_xR7EbAyNjWMIJV-LjbTLMQDhFPVc2a5qmvAqJVGW_l"/>
+<div class="p-4 flex-1">
+<span class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="delete">delete</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Entrümpelung</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Schnelle und besenreine Räumung sowie fachgerechte Entsorgung.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-primary dark:bg-tertiary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-on-primary dark:text-on-tertiary mb-4">
+                    MD Service Trans
+                </div>
+<p class="font-body-md text-body-md text-surface-variant/80">
+                    © 2024 MD Service Trans. Alle Rechte vorbehalten.
+                </p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-4 md:justify-end items-center">
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">Impressum</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">Datenschutz</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">AGB</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">Widerruf</a>
+<a class="font-body-md text-body-md text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">Cookie-Einstellungen</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Image Compare Slider Logic
+        const compareContainer = document.getElementById('hero-compare');
+        if(compareContainer) {
+            const overlay = compareContainer.querySelector('.image-compare-overlay');
+            const handle = compareContainer.querySelector('.image-compare-handle');
+            let isDragging = false;
+
+            const updateSlider = (e) => {
+                if (!isDragging) return;
+                const rect = compareContainer.getBoundingClientRect();
+                let x = e.clientX || (e.touches && e.touches[0].clientX);
+                if(x === undefined) return;
+                
+                let position = ((x - rect.left) / rect.width) * 100;
+                position = Math.max(0, Math.min(position, 100)); // Clamp between 0 and 100
+                
+                overlay.style.width = `${position}%`;
+                handle.style.left = `${position}%`;
+            };
+
+            handle.addEventListener('mousedown', () => isDragging = true);
+            handle.addEventListener('touchstart', () => isDragging = true, {passive: true});
+            
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('touchend', () => isDragging = false);
+            
+            window.addEventListener('mousemove', updateSlider);
+            window.addEventListener('touchmove', updateSlider, {passive: true});
+        }
+    </script>
+</body></html>
