@@ -332,7 +332,7 @@ p { color: var(--color-text-muted); }
 }
 
 /* Sections */
-section { padding: var(--space-7) 0; }
+section { padding: var(--space-7) 0; scroll-margin-top: 88px; }
 .section-head { max-width: 640px; margin: 0 auto var(--space-5); text-align: center; }
 .section-head .eyebrow { margin: 0 auto var(--space-2); }
 .kicker {
@@ -619,6 +619,14 @@ section { padding: var(--space-7) 0; }
 .form-two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
 .form-hint { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px; }
 .form-note { font-size: 0.82rem; color: var(--color-text-muted); margin-top: var(--space-2); }
+
+.hp-field {
+  position: absolute;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 .service-fields {
   display: none;

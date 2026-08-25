@@ -5,6 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MD Service Trans — Umzüge & Möbeltransporte in Nürnberg & Franken</title>
 <meta name="description" content="Umzüge, Möbeltransporte, Möbel-Montage/Demontage und Entrümpelung in Nürnberg und Franken. Festpreis ohne versteckte Kosten, versichert, schnelle Antwort.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B3559">
+
+<!-- TODO: update url/og:url/canonical to the final domain once it replaces this GitHub Pages preview -->
+<link rel="canonical" href="https://levelopt-create.github.io/md-service-trans-preview/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MD Service Trans">
+<meta property="og:title" content="MD Service Trans — Umzüge & Möbeltransporte in Nürnberg & Franken">
+<meta property="og:description" content="Umzüge, Möbeltransporte, Möbel-Montage/Demontage und Entrümpelung in Nürnberg und Franken. Festpreis ohne versteckte Kosten, versichert, schnelle Antwort.">
+<meta property="og:url" content="https://levelopt-create.github.io/md-service-trans-preview/">
+<meta property="og:image" content="https://levelopt-create.github.io/md-service-trans-preview/assets/brand/favicon-512.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MD Service Trans — Umzüge & Möbeltransporte in Nürnberg & Franken">
+<meta name="twitter:description" content="Umzüge, Möbeltransporte, Möbel-Montage/Demontage und Entrümpelung in Nürnberg und Franken.">
+<meta name="twitter:image" content="https://levelopt-create.github.io/md-service-trans-preview/assets/brand/favicon-512.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/brand/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
+
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
 
@@ -303,6 +325,14 @@
 
         <form class="contact-form" id="request-form" action="mailto:md.service.trans@gmail.com" method="post" enctype="text/plain">
 
+          <!-- Honeypot: hidden from real users, bots often fill every field.
+               Not enforced by mailto: today, but ready for when this form
+               is connected to a real backend (Formspree/Netlify Forms/etc.) -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="form-row">
             <label for="service">Gewünschte Leistung *</label>
             <select id="service" name="Leistung" required>
@@ -576,6 +606,17 @@
 
     setPosition(50);
   })();
+
+  // Honeypot: block submission if the hidden field got filled in (bots only)
+  var requestForm = document.getElementById('request-form');
+  if (requestForm) {
+    requestForm.addEventListener('submit', function (e) {
+      var hp = document.getElementById('website');
+      if (hp && hp.value.trim() !== '') {
+        e.preventDefault();
+      }
+    });
+  }
 
   // Dynamic per-service request form fields
   const serviceSelect = document.getElementById('service');
