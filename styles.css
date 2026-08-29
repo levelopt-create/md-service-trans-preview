@@ -521,13 +521,29 @@ section { padding: var(--space-7) 0; scroll-margin-top: 88px; }
 /* Reviews */
 .section-slim { padding: var(--space-4) 0; }
 
+.reviews-scroll {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 2px 2px var(--space-3);
+  margin-bottom: var(--space-1);
+  scrollbar-color: var(--color-border) transparent;
+  scrollbar-width: thin;
+}
+.reviews-scroll::-webkit-scrollbar { height: 8px; }
+.reviews-scroll::-webkit-scrollbar-track { background: transparent; }
+.reviews-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 999px; }
+.reviews-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-navy-light); }
+
 .review-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   padding: var(--space-4);
-  margin-bottom: var(--space-3);
+  flex: 0 0 min(85vw, 380px);
+  scroll-snap-align: start;
 }
 .review-card-head {
   display: flex;
