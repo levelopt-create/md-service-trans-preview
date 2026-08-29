@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://levelopt-create.github.io/md-service-trans-preview/sitemap.xml
+Sitemap: https://www.mdservicetrans.de/sitemap.xml
