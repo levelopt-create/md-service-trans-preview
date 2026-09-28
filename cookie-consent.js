@@ -17,6 +17,13 @@
   'use strict';
 
   var STORAGE_KEY = 'mdst_cookie_consent_v1';
+
+  // Privacy-policy link relative to wherever this script is served from (works in subfolders too)
+  var scriptEl = document.currentScript;
+  var basePath = (scriptEl && scriptEl.getAttribute('src'))
+    ? scriptEl.getAttribute('src').replace(/cookie-consent\.js.*$/, '')
+    : '';
+  var privacyUrl = basePath + 'datenschutz.html';
   var listeners = [];
 
   var CATEGORIES = [
@@ -94,7 +101,7 @@
       [document.createTextNode(
         'Wir verwenden nur technisch notwendige Cookies. Sobald wir Statistik-, Karten- oder Marketing-Dienste einbinden, entscheiden Sie hier, was Sie erlauben. Details in unserer ')]
     );
-    var link = el('a', { href: 'datenschutz.html', class: 'cc-link', text: 'Datenschutzerklärung' });
+    var link = el('a', { href: privacyUrl, class: 'cc-link', text: 'Datenschutzerklärung' });
     text.appendChild(link);
     text.appendChild(document.createTextNode('.'));
 

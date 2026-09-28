@@ -2,7 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.mdservicetrans.de/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/haushaltsaufloesung.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/wohnungsaufloesung.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/keller-dachboden-garage.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/vermuellte-wohnung.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mdservicetrans.de/entruempelung/geschaeftsaufloesung.html</loc>
+    <lastmod>2026-09-28</lastmod>
   </url>
 </urlset>

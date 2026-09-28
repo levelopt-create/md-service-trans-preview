@@ -69,6 +69,7 @@
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
+      <a href="entruempelung/">Entrümpelung</a>
       <a href="#warum-wir">Warum wir</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#einsatzgebiet">Einsatzgebiet</a>
@@ -191,7 +192,7 @@
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></div>
             <h3>Entrümpelung &amp; Entsorgung</h3>
             <p>Wohnungsauflösung, Kellerräumung oder Haushaltsauflösung — besenrein und fachgerecht entsorgt.</p>
-            <a class="service-link" href="#kontakt">Angebot anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="service-link" href="entruempelung/">Mehr zu Entrümpelung <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
 
@@ -536,7 +537,7 @@
         <a href="#leistungen">Full-Service Umzüge</a>
         <a href="#leistungen">Möbeltransporte</a>
         <a href="#leistungen">Möbel-Montage &amp; Demontage</a>
-        <a href="#leistungen">Entrümpelung &amp; Entsorgung</a>
+        <a href="entruempelung/">Entrümpelung &amp; Entsorgung</a>
       </div>
       <div class="footer-col">
         <h4>Unternehmen</h4>
@@ -656,6 +657,14 @@
       });
     });
   });
+
+  // Preselect the service when arriving from a landing page, e.g. /?leistung=Entruempelung#kontakt
+  (function () {
+    const wanted = new URLSearchParams(window.location.search).get('leistung');
+    if (!wanted) return;
+    serviceSelect.value = wanted;
+    if (serviceSelect.value === wanted) serviceSelect.dispatchEvent(new Event('change'));
+  })();
 </script>
 <script src="cookie-consent.js" defer></script>
 </body>

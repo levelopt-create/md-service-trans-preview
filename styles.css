@@ -924,3 +924,31 @@ body.cc-modal-open .cc-overlay { display: flex; }
     box-shadow: var(--shadow-card);
   }
 }
+
+/* Header: seven nav items + phone + CTA need more room than the old six */
+.main-nav a, .phone-link, .header-cta .btn { white-space: nowrap; }
+.main-nav a[aria-current="page"], .main-nav a.nav-current { border-color: var(--color-orange-dark); }
+@media (max-width: 1320px) {
+  .main-nav { gap: 18px; }
+}
+@media (max-width: 1240px) {
+  .phone-link span { display: none; }
+}
+@media (max-width: 1120px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    gap: 0;
+    background: var(--color-surface);
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+  .main-nav.open a { padding: 14px 4px; border-bottom: 1px solid var(--color-bg); }
+}
